@@ -133,7 +133,7 @@ h6 {
 }
 
 #header .logo h1 {
-  font-size: 28px;
+  font-size: 20px;
   margin: 0;
   line-height: 0;
   font-weight: 700;
@@ -403,8 +403,6 @@ h6 {
 #hero {
   width: 100%;
   height:80vh;
-  background: url("https://raw.githubusercontent.com/toukaattacker/universestudio/main/assets/img/company-bg.jpg");
-  background-size: cover;
   position: relative;
   z-index: 1;
   padding: 0;
@@ -652,9 +650,10 @@ section {
 }
 
 .about .icon-boxes h3 {
-  font-size: 28px;
+  font-size:30px;
   font-weight: 700;
   color: #554945;
+  bottom: 110px;
   margin-bottom: 15px;
 }
 
@@ -693,7 +692,7 @@ section {
   margin-left: 85px;
   font-weight: 700;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 180px;
 }
 
 .about .icon-box .title a {
@@ -714,77 +713,9 @@ section {
 .about .video-box {
   background: url("../img/about-img.jpg") center center no-repeat;
   background-size: cover;
-  min-height: 500px;
-  position: relative;
-  top: 90px;
+  min-height: 550px;
+  top: 110px;
 
-}
-
-.about .play-btn {
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(#ff5821 50%, rgba(255, 88, 33, 0.4) 52%);
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-  left: calc(50% - 47px);
-  top: calc(50% - 47px);
-  overflow: hidden;
-}
-
-.about .play-btn::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.about .play-btn::before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  animation-delay: 0s;
-  animation: pulsate-btn 2s;
-  animation-direction: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid rgba(255, 88, 33, 0.7);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
-}
-
-.about .play-btn:hover::after {
-  border-left: 15px solid #ff5821;
-  transform: scale(20);
-}
-
-.about .play-btn:hover::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 200;
-  animation: none;
-  border-radius: 0;
 }
 
 @keyframes pulsate-btn {
