@@ -504,6 +504,20 @@ h6 {
     height: 120vh;
   }
 }
+.iframe-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Iframe di belakang konten */
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Menghilangkan border */
+}
 
 /*--------------------------------------------------------------
 # Sections General
@@ -733,99 +747,74 @@ section {
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
-.clients .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.clients .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #ff5821;
-}
-
-.clients .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #ff5821;
-}
 
 .clients .swiper-slide img {
-  opacity: 0.5;
-  filter: grayscale(100%);
+  width: 100px;
+  animation: slide 5s linear infinite;
 }
 
-.clients .swiper-slide img:hover {
-  filter: none;
-  opacity: 1;
+@keyframes slide {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(100%);
+  }
 }
+
+
 
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
-  padding: 50px 20px;
-  margin-top: 35px;
-  margin-bottom: 25px;
-  text-align: center;
-  height: 400px;
-  font-family: "Poppins", sans-serif;
-  font-variant: normal;
-  position: relative;
-  background: #fff;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+
+.yellow-section {
+  background-color: yellow; /* Warna latar belakang kuning */
+  padding: 40px; /* Jarak dalam section */
+  text-align: center; /* Teks di tengah */
+  border-radius: 5px; /* Sudut membulat */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
 }
 
-.services .icon {
-  position: absolute;
-  top: -36px;
-  left: calc(50% - 36px);
-  transition: 0.2s;
-  border-radius: 50%;
-  border: 6px solid #fff;
+.services-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+  color: #333;
+}
+
+.services-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px; /* Jarak antara kolom */
+}
+
+.service-item {
+  background-color: #000000; /* Warna latar belakang */
+  color: white; /* Warna teks */
+  padding: 20px;
+  flex: 1 1 calc(25% - 15px); /* Lebar kolom 25% dikurangi jarak */
+  box-sizing: border-box;
   text-align: center;
-  width: 72px;
-  height: 72px;
-  background: #ff5821;
+  border-radius: 5px; /* Sudut membulat */
+  transition: background-color 0.3s; /* Animasi saat hover */
 }
 
-.services .icon i {
-  color: #fff;
-  font-size: 24px;
-  line-height: 0;
+.service-item i {
+  font-size: 30px; /* Ukuran ikon */
+  margin-bottom: 10px; /* Jarak antara ikon dan judul */
 }
 
-.services .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-  text-transform: uppercase;
+.service-item h3 {
+  margin: 0 0 10px; /* Jarak antara judul dan deskripsi */
 }
 
-.services .title a {
-  color: #343a40;
+.service-item p {
+  margin: 0; /* Hapus margin pada paragraf */
 }
 
-.services .icon-box:hover .icon {
-  background: #fff;
-  border: 2px solid #ff5821;
-}
-
-.services .icon-box:hover .icon i {
-  color: #ff5821;
-}
-
-.services .icon-box:hover .title a {
-  color: #ff5821;
-}
-
-.services .description {
-  line-height: 24px;
-  font-size: 14px;
+.service-item:hover {
+  background-color: #000000; /* Warna latar belakang saat hover */
 }
 
 /*--------------------------------------------------------------
@@ -1972,125 +1961,48 @@ section {
   background: rgb(231, 224, 224)
 }
 
+.footer-content {
+  display: flex; /* Menggunakan flexbox untuk konten footer */
+  justify-content: space-between; /* Menjauhkan elemen */
+  max-width: 1200px; /* Batas maksimal lebar footer */
+  margin: 0 auto; /* Mengatur margin auto agar footer berada di tengah */
+}
+
+.collaboration {
+  text-align: left; /* Menjajarkan teks ke kiri */
+}
+
+.collaboration h2 {
+  margin: 0; /* Menghilangkan margin default */
+}
+
+.image-container {
+  display: flex; /* Menggunakan flexbox untuk gambar */
+  margin-top: 10px; /* Jarak antara judul dan gambar */
+}
+
+.image-container img {
+  max-width: 100px; /* Mengatur lebar gambar */
+  height: auto; /* Menjaga rasio aspek gambar */
+  margin-left: 10px; /* Jarak antara gambar */
+}
+
+.address {
+  text-align: left; /* Menjajarkan teks ke kiri */
+}
+
+.address h3 {
+  margin: 0; /* Menghilangkan margin default */
+}
+
+.address p {
+  margin: 5px 0; /* Jarak antara paragraf */
+}
 #footer .footer-top {
   padding: 60px 0 30px 0;
   background-color: #ffbb05;
 }
 
-#footer .footer-top .footer-contact {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-contact h4 {
-  font-size: 22px;
-  margin: 0 0 30px 0;
-  padding: 2px 0 2px 0;
-  line-height: 1;
-  font-weight: 700;
-}
-
-#footer .footer-top .footer-contact p {
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
-  color: #000000;
-}
-
-#footer .footer-top h4 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #313030;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#footer .footer-top .footer-links ul i {
-  padding-right: 2px;
-  color: #ffa587;
-  font-size: 18px;
-  line-height: 1;
-}
-
-#footer .footer-top .footer-links ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-#footer .footer-top .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
-#footer .footer-top .footer-links ul a {
-  color: #656262;
-  transition: 0.3s;
-  display: inline-block;
-  line-height: 1;
-}
-
-#footer .footer-top .footer-links ul a:hover {
-  text-decoration: none;
-  color: #ff5821;
-}
-
-#footer .footer-newsletter {
-  font-size: 15px;
-}
-
-#footer .footer-newsletter h4 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #313030;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-#footer .footer-newsletter form {
-  margin-top: 30px;
-  background: #fff;
-  padding: 6px 10px;
-  position: relative;
-  border-radius: 50px;
-  text-align: left;
-  border: 1px solid #ffe2d9;
-}
-
-#footer .footer-newsletter form input[type=email] {
-  border: 0;
-  padding: 4px 8px;
-  width: calc(100% - 100px);
-}
-
-#footer .footer-newsletter form input[type=submit] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border: 0;
-  background: none;
-  font-size: 16px;
-  padding: 0 20px;
-  background: #ff5821;
-  color: #fff;
-  transition: 0.3s;
-  border-radius: 50px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-#footer .footer-newsletter form input[type=submit]:hover {
-  background: #ed3b00;
-}
 
 #footer .credits {
   padding-top: 5px;
@@ -2118,3 +2030,4 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
